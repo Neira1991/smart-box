@@ -15,8 +15,8 @@
   "scripts": {
     "del-dist": "lerna exec --parallel -- del-cli dist",
     "prebuild": "yarn del-dist",
-    "build": "lerna exec --scope shared -- babel src -d dist --ignore test.js,story.js",
-    "start": "cd packages/myapp && yarn start",
+    "build": "lerna exec --scope smart-box-ui -- babel src -d dist --ignore test.js,story.js",
+    "start": "cd packages/smart-box-web && yarn start",
     "format": "prettier --print-width 80 --tab-width 4 --single-quote --write 'packages/*/src/**/*.js'",
     "precommit": "lint-staged"
   },
