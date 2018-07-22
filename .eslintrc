@@ -33,7 +33,7 @@
     "exports": "never",
     "functions": "ignore"
     }],
-    "arrow-body-style": ["error", "as-needed"],
+    "arrow-parens": ["error", "as-needed"],
     "react/jsx-one-expression-per-line": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/forbid-prop-types": ["off"],
