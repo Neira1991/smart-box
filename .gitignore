@@ -3,6 +3,9 @@
 # dependencies
 node_modules
 
+#Packages
+package-lock.json
+
 # testing
 coverage
 
@@ -22,3 +25,4 @@ dist
 Thumbs.db
 
 *.log
+*.lock

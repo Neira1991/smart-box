@@ -13,6 +13,8 @@
     "packages/*"
   ],
   "scripts": {
+    "bootstrap": "yarn install --ignore-engines && yarn lerna bootstrap",
+    "regenerate": "lerna clean && rm -rf ./node_modules && yarn run bootstrap",
     "del-dist": "lerna exec --parallel -- del-cli dist",
     "prebuild": "yarn del-dist",
     "build": "lerna exec --scope smart-box-ui -- babel src -d dist --ignore test.js,story.js",
@@ -21,16 +23,34 @@
     "precommit": "lint-staged"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.6",
     "del-cli": "^1.1.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.10.0",
     "husky": "^0.14.3",
     "lerna": "^2.9.0",
     "lint-staged": "^7.0.2",
     "prettier": "^1.11.1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.js": [
+      "eslint",
       "prettier --print-width 80 --tab-width 4 --single-quote --write",
       "git add"
     ]
+  },
+  "dependencies": {
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5"
   }
 }

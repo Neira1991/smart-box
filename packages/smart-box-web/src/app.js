@@ -1,9 +1,18 @@
 import React from 'react';
 import { Header } from 'smart-box-ui';
-import { HomePage } from './features/home/home-page';
+import HomePage from './components/home/home-page';
 
-export class App extends React.Component {
+class App extends React.Component {
+    state = {
+        isLoading: false
+    };
+
     render() {
+        const { isLoading } = this.state;
+
+        if (isLoading) {
+            return <p>cargando</p>;
+        }
         return (
             <div>
                 <Header>Smart Box</Header>
@@ -12,3 +21,5 @@ export class App extends React.Component {
         );
     }
 }
+
+export default App;
